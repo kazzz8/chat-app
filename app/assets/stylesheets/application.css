@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+  box-sizing: border-box;
+ }
+/* box-sizing: border-boxを指定することで、あるボックス要素に対してpaddingやborderを設定してもボックスの大きさは固定される */
+/* *は全ての要素に適用させるという意味を持つ */
