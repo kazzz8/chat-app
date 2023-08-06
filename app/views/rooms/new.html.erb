@@ -19,10 +19,10 @@
         <select name="room[user_ids][]"> <%# room[user_ids]の場合は{"room" => {"user_ids" =>} "値"}}が送られる。一方今回のようにroom[user_ids][]にすることで、"値"の部分が["値"]になる。配列の中に配列があるようなイメージ。このようにすることで、この下の記述でログインしているユーザーのidも入れることができる["選択したユーザーのid", "現在ログインしているユーザーのid"]が格納される %>
           <option value="">チャットするユーザーを選択してください</option>
           <% User.where.not(id: current_user.id).each do |user| %> <%# モデル名.where(条件)で条件に一致するレコードだけを配列から取り出す %>
-            <option value=<% user.id %>><%= user.name %></option> <%# {"room" => {"user_ids" => ["選択したユーザーのid"]}}が送られる %>
+            <option value=<%=user.id%>><%= user.name %></option> <%# 多分ここで選択されたuser.idが配列の中の値として格納されるんだと思う %>
           <% end %>
         </select>
-        <input name="room[user_ids][]" type="hidden" value=<% current_user.id %>> <%# roomにはもちろんログイン中のユーザーも入るので、ユーザーidをパラメーターとして送信する。typeにhiddenを指定すること、画面上には表示されないinput要素を作成することができる。hiddenは「隠れた」という意味。 %>
+        <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>> <%# roomにはもちろんログイン中のユーザーも入るので、ユーザーidをパラメーターとして送信する。typeにhiddenを指定すること、画面上には表示されないinput要素を作成することができる。hiddenは「隠れた」という意味。 %>
       </div> <%# {"room" => {"user_ids" => ["選択したユーザーのid","現在ログインしているユーザーのid"]}}が送られる %>
     </div>
     <div class='chat-room-form__field'>

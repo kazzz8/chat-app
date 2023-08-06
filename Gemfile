@@ -72,3 +72,4 @@ group :test do
 end
 
 gem 'devise'
+gem 'pry-rails' #アプリを一時停止して動作確認できるようにするためのGem
