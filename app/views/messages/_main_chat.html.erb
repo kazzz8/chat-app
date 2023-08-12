@@ -6,7 +6,7 @@
   </div>
   <div class="right-header">
     <div class="header-button">
-      <a href=#>チャットを終了する</a>
+      <%= link_to "チャットを終了する", room_path(@room), data: { turbo_method: :delete } %> <%# わざわざ(@room.id)としてなくても(@room)でidを上手く拾ってくれるのかな %>
     </div>
   </div>
 </div>
