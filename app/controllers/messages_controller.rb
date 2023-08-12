@@ -19,6 +19,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id) #messageにはuser_idが必要なのでマージして付与している。permitは許可するカラムを指定している。
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id) #messageにはuser_idが必要なのでマージして付与している。permitは許可するカラムを指定している。
   end
 end

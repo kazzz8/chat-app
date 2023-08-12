@@ -73,3 +73,6 @@ end
 
 gem 'devise'
 gem 'pry-rails' #アプリを一時停止して動作確認できるようにするためのGem
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
