@@ -7,7 +7,7 @@
     </div>
     <div class="message-date">
       <!-- 投稿した時刻を出力する -->
-      <%= message.created_at %>
+      <%= l message.created_at %> <%# l(エル)メソッドは日付や時刻を表示するもの。lメソッドを使えば設定している国や地域の時刻を表示してくれる %>
     </div>
   </div>
   <div class="lower-message">
