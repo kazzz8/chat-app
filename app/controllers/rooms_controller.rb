@@ -12,6 +12,12 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    room = Room.find(params[:id]) #多分、この行はビューから対象のroomの情報が送られてきているので[:room_id]ではなく、[:id]でいいのかな。はっきりとはわからない。
+    room.destroy #ビューにデータを流さないのでインスタンス変数とする必要はない。つまり@は不要
+    redirect_to root_path
+  end
+
   private
 
   def room_params
